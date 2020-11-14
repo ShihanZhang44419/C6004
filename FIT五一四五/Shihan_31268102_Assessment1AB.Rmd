@@ -1,0 +1,420 @@
+---
+title: "FIT51454 Assignment_1_AB"
+author: "Shihan Zhang"
+date: "8/31/2020"
+output: html_document
+---
+
+
+# library
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(googleVis)
+```
+
+# load data from the source files
+```{r}
+data1 <- read_csv("FIT5145_S2_2020_A1_Data1_IndigAusPopData_byregion.csv")
+data2 <- read_csv("FIT5145_S2_2020_A1_Data2_IndigAusPopData_bystate.csv")
+data3 <- read_csv("FIT5145_S2_2020_A1_Data3_AusImmunisationData.csv")
+```
+
+# Task - A1
+
+## Question 1
+a) find the maximum and minimum value of the total population in 2016 and 2031.
+   To answer this question, we need a few steps of operation:
+
+ - Step 1. group all the regions by year '2016' and '2031' then calculate the total population value.
+   In the following code, I make a new df, is because I don't want to change anything from the original data frame.
+   So if the later operation request to extract certain data from 'data1', I can access the source data directly, rather than read the source file again.  
+ 
+ - Step 2. Summarise the the grouped data, output the maximum and minimum value base on different year.
+   
+```{r}
+# step 1, new df with the calculation of grouped result
+two_year_total <- group_by(data1, `Indigenous region`) %>%
+  summarise('Total_2016' = sum(Value[TIME == 2016]),
+            'Total_2031' = sum(Value[TIME == 2031]))
+
+# step 2
+summarise(two_year_total, 
+           'Max_2016' = (`Indigenous region`[which.max(Total_2016)]),
+           'Min_2016' = (`Indigenous region`[which.min(Total_2016)]),
+           'Max_2031' = (`Indigenous region`[which.max(Total_2031)]),
+           'Min_2031' = (`Indigenous region`[which.min(Total_2031)]))
+```
+
+
+b) find maximum and minimum growth or decay rates of the total population
+
+ - Step 1. We can use the df 'two_year_total' to calculate the growth and decay rate, then we insert the calculation result to into the new column.
+   
+ - Step 2. We summarise the growth or decay rate and output the result.
+   - Step 2A, in this case, i want to find the only 'growth', which means the rate must be positive value.
+   - Step 2B, in this case, i want to find the only 'decay',  which means the rate must be negrive value.
+     In the following output, we only has one negtive value -> 'Katherine'. Therefore there is no max or mini value for the true 'decay'. 
+     But in overall, if we combine case 'A' & 'B' together then:
+     Maximum will be -> 'ACT'
+     Minimum will be -> 'Katherine'
+   
+```{r}
+# step 1
+two_year_total$growth_decay <- (((two_year_total$Total_2031 - two_year_total$Total_2016)/two_year_total$Total_2016))
+
+# step 2A
+subset(two_year_total, growth_decay >= 0) %>%
+  summarise('Max_growth' = (`Indigenous region`[which.max(growth_decay)]),
+            'Min_growth' = (`Indigenous region`[which.min(growth_decay)]))
+# step 2B
+subset(two_year_total, growth_decay <= 0) %>%
+  summarise('Max_decay' = (`Indigenous region`[which.max(growth_decay)]),
+            'Min_decay' = (`Indigenous region`[which.min(growth_decay)]))
+```
+
+
+c) Plot the growth or decay of total population (all time) for 8 capitals
+   To answer this question,
+  
+  - Step 1. We subset the value by region(condition is the region name), which are the 8 capitals to make a new df.
+  - Step 2. We summarise the calculation result(condition is the YEAR)
+  
+```{r}
+# step 1
+capitals <- subset(data1,
+              `Indigenous region` == "ACT"      | `Indigenous region` == "Adelaide"  |
+              `Indigenous region` == "Brisbane" | `Indigenous region` == "Darwin"    |
+              `Indigenous region` == "Tasmania" | `Indigenous region` == "Melbourne" |
+              `Indigenous region` == "Perth"    | 
+              `Indigenous region` == "Sydney - Wollongong")
+
+# step 2
+capitals <- group_by(capitals, `Indigenous region`) %>%
+  summarise(
+            'Total_2016' = sum(Value[TIME =='2016']),'Total_2017' = sum(Value[TIME =='2017']),
+            'Total_2018' = sum(Value[TIME =='2018']),'Total_2019' = sum(Value[TIME =='2019']),
+            'Total_2020' = sum(Value[TIME =='2020']),'Total_2021' = sum(Value[TIME =='2021']),
+            'Total_2022' = sum(Value[TIME =='2022']),'Total_2023' = sum(Value[TIME =='2023']),
+            'Total_2024' = sum(Value[TIME =='2024']),'Total_2025' = sum(Value[TIME =='2025']),
+            'Total_2026' = sum(Value[TIME =='2026']),'Total_2027' = sum(Value[TIME =='2027']),
+            'Total_2028' = sum(Value[TIME =='2028']),'Total_2029' = sum(Value[TIME =='2029']),
+            'Total_2030' = sum(Value[TIME =='2030']),'Total_2031' = sum(Value[TIME =='2031']))
+```
+
+ - Step 3. Now we have all the total population based on each year, next we calculate the growth or decay rate.
+   rather than manually do the calculation i choose to use for loop.
+ 
+ - Step 4. re-shape the df to long formati. the wide format is not ideal for plotting a chart. Therefore, we need to re-shape the df.
+ 
+```{r}
+# step 3, fucntion for calculation
+gd_rates <- function(df){
+  # loop from the 2nd column to last one, -1 to make sure the index in the valid range
+   for(i in 2:(ncol(df) - 1)){
+     # m is the following year of ith year
+     m = i + 1
+     # rebuild the column name
+     col = toString(paste0("rates_",toString(i + 14),"_",toString(i + 15)))
+     # rename the column 
+     names(df)[i] <- col
+     # calculate the growth or decay rates. ith index is the first year, mth year is the following year
+     rates <- ((df[,m] - df[,i])/(df[,i]))
+     # re-assign the calculation result to ith column
+     df[,i] <- rates
+   }
+  # the range of year has n-1th rate, so drop the last column
+  df[ncol(df)] <- NULL
+  # return new df 
+  return(df)
+}
+# re-assign the df
+capitals <- gd_rates(capitals)
+
+# step 4, reshape to long format, make it esaier for plotting
+capitals <- gather(capitals, period, value, rates_16_17 : rates_30_31)
+```
+
+ - Step 5. Now the df(capitals) in under long format, then we make the plot with configuration of the chart.
+ 
+```{r}
+ggplot(capitals, aes(period, value)) + geom_bar(stat="identity") + facet_wrap(~`Indigenous region`, ncol=2) + ggtitle("Growth or decay rates of total Indigenous population for capitals of 8 state/territories") + xlab("Rates") + ylab("Period")
+```
+
+
+
+# Task - A2
+## Question 1, which region has the hightest percentage of children?
+   To answer this question, copy the data1 to new df -> 'cp_d1'.
+   
+  - Step 1. We calculate the total population of childer which are the age group "0-4", "5-9", "10-14".
+    But there are some error with the data for age which are '5-sep', 'oct-14'
+    So, before the grouping process we need to fix the error first.
+    As the data type of age is factor, So before we rename the error 'age group' we need to convert the age value to 'type -> charactor' to avoid wrong type opreation and NA generations.
+    
+  - Step 2. We group the value to new df with calculation of children population(condition by Age and Year),
+    then we use the new column to calculate the percentage value.
+    
+  - Step 3. we summarise the calculation result to output the region with hightest percentage value.
+    
+```{r}
+# step 1
+cp_d1 <- data1
+cp_d1$Age <- as.character(cp_d1$Age)
+cp_d1$Age[cp_d1$Age == '5-Sep'] <- '5 - 9'
+cp_d1$Age[cp_d1$Age == 'Oct-14'] <- '10 - 14'
+
+# convert back to factor 
+cp_d1$Age <- as.factor(cp_d1$Age)
+
+# step 2
+child_ttl <- group_by(cp_d1, `Indigenous region`) %>%
+  summarise('child_2016' = sum(Value[(TIME == '2016' & Age =='0 - 4') |
+                                     (TIME == '2016' & Age =='5 - 9') |
+                                     (TIME == '2016' & Age =='10 - 14')]),
+            'total_2016' = sum(Value[TIME == '2016']))
+
+child_ttl$percentage <- ((child_ttl$child_2016 / child_ttl$total_2016) * 100)
+
+# step 3
+summarise(child_ttl, 'Highest' = (`Indigenous region`[which.max(percentage)]),
+                     'Percentage' = max(percentage))
+```
+
+
+## Question 2
+   To answer this question, subse the value from data2 by columne index of target year.
+   
+ - Step 1. before the calculation, we need to reshape the df to long format for easier opreation.
+   *for better looking, we convert all the state name to uppercase(also to prevent case-sensitive problem)
+   Then we conver the column 'value' to numeric type for later calculation.
+
+ - Step 2. Becasue of we have 2 type of age group(">15" and "<15").
+   So, we do the summarise separately and output 2 different dfs.
+   - Step 2A. in this case, we summarise the calculation result of total popolation based on 3 single year.
+     Then we conver the column 'Age' to numeric type, the ways to do is use 'sub("65 AND OVER", "65", d2child$Age)'. to replace the value. then to the type convertion to avoid any NA value genertion.
+     
+   - Step 2B. in this case, we summarise the calculation result of children(condition is year and age <15)
+   
+ - Step 3. We use inner_join() the combine two sub df(by State as the primary key) 
+   Then we do the calculation for 3 single years and insert to the new columns
+   finally, we summarise the State with hightest percentage value of 3 single years
+   
+```{r}
+# subset the data by target year, 2006,2016,2031
+d2child <- data2[,c(1,2,3,13,28)]
+
+# step 1, reshape to long format
+d2child <- gather(d2child, TIME, Value, '2006','2016','2031')
+# Rename all region to upper case
+d2child <- mutate_all(d2child, toupper)
+# convert the data type to numerice for calculation
+d2child$Value <- as.numeric(d2child$Value)
+# conver the age to numeric.
+d2child$Age <- as.numeric(sub("65 AND OVER", "65",d2child$Age, fixed = TRUE))
+
+# step 2, group the data by State
+d2child <- group_by(d2child, State)
+
+# step 2A, calculate the total population for 3 single years
+total <- summarise(d2child,'Total_2006' = sum(Value[(TIME == '2006')]),
+                 'Total_2016' = sum(Value[(TIME == '2016')]),
+                 'Total_2031' = sum(Value[(TIME == '2031')]))
+
+# step 2B, use age as conditions
+children <- summarise(d2child,'Child_2006' = sum(Value[(TIME == '2006' & Age < 15)], na.rm = TRUE),
+                 'Child_2016' = sum(Value[(TIME == '2016' & Age < 15)], na.rm = TRUE),
+                 'Child_2031' = sum(Value[(TIME == '2031' & Age < 15)], na.rm = TRUE))
+
+# step 3, join two dfs 
+ttl_3y <- inner_join(total, children, by = "State")
+# calculate the percentage
+ttl_3y$percent_06 <- (ttl_3y$Child_2006 / ttl_3y$Total_2006) * 100
+ttl_3y$percent_16 <- (ttl_3y$Child_2016 / ttl_3y$Total_2016) * 100
+ttl_3y$percent_31 <- (ttl_3y$Child_2031 / ttl_3y$Total_2031) * 100
+
+summarise(ttl_3y, "Highest_2006" = (State[which.max(percent_06)]), "%_06" = max(percent_06),
+                  "Highest_2016" = (State[which.max(percent_16)]), "%_16" = max(percent_16),
+                  "Highest_2031" = (State[which.max(percent_31)]), "%_31" = max(percent_31))
+```
+
+
+## Question 3
+Data from data1:
+ - Step 1. The data2 has some unnecessary columns for later plot, also the shape is wide format.
+   So, we can re-shape the data2 to long format with the reqired columns to a new df.
+ 
+ - Step 2. Before the calculation, we need to do the type converstion for column 'Age'.
+   Then we can summarise the calculation result by State, TIME and the total population for all age groups and children.
+   next, we use the total popualtion for children and all age group to calculat the percentage of children
+   
+Data from data2:
+ - Step 3. In data1 we have many regions that under the 8 capitals. they all has the region code in a range X'1 - 99'
+   which X represent the capital. 
+   
+   So, we can use this range to allocate the regions belongs to which state and calculate the total population of each region
+   and generate the primary key as state. Then we re-shape the df to long fromat. 
+   
+   Now, the regions which has the wrong State values are carrying the value '0', which mean we can drop the rows that has 'value = 0'. 
+   Therefor, the rest of the rows are the correct data we going to use.
+   
+ - Step 4. The motion chart only use 'Date or numeric' type data for time variable, so the TIME from the data2 need to be conver to numeric data type. which also repried for later df merging opration.
+   Now, we can use full_join() with primary key("State", "TIME") to merg the two dfs
+   
+   Before the plot, the motion chart can only use 'a real data frame' to generate the chart
+   So, we need to re-assign the summarised output to 'a real data frame' by use 'as.data.frame(q3d2ttl)'
+   
+ - Step 5. now we can make the chart with some configrations.
+ 
+```{r}
+# step 1. reshape the data frame
+q3d2ttl <- gather(data2, TIME, Value, '2016' : '2031')
+# Rename all region to upper case
+q3d2ttl <- mutate_all(q3d2ttl, toupper)
+
+# step 2, conver the age to numerice value for later condition uses
+q3d2ttl$Age <- as.numeric(sub("65 AND OVER", "65",q3d2ttl$Age, fixed = TRUE))
+# calculate the total popolation group by region
+q3d2ttl <- group_by(q3d2ttl, State, TIME) %>%
+  summarise('Total_Population' = sum(as.numeric(Value)),
+            'Total_children' = sum(as.numeric(Value[Age < 15]), na.rm = TRUE))
+# calculate the percentage
+q3d2ttl$Percentage = (q3d2ttl$Total_children / q3d2ttl$Total_Population)*100
+
+# step 3, calcaute total population from data1, group the value by state(region code)
+d1ttlpop <- group_by(data1, TIME,`Indigenous region`) %>%
+   summarise('NSW' = sum(Value[which(INDIGENOUS_REGION %in% (101:199))]),
+             'VIC' = sum(Value[which(INDIGENOUS_REGION %in% (201:299))]),
+             'QLD' = sum(Value[which(INDIGENOUS_REGION %in% (301:399))]),
+             'SA'  = sum(Value[which(INDIGENOUS_REGION %in% (401:499))]),
+             'WA'  = sum(Value[which(INDIGENOUS_REGION %in% (501:599))]),
+             'TAS' = sum(Value[which(INDIGENOUS_REGION %in% (601:699))]),
+             'NT'  = sum(Value[which(INDIGENOUS_REGION %in% (701:799))]),
+             'ACT' = sum(Value[which(INDIGENOUS_REGION %in% (801:899))]))
+
+# reshape df
+d1ttlpop <- gather(d1ttlpop, State, Population, 'NSW' : 'ACT')
+# remove all rows that include 0
+d1ttlpop <- d1ttlpop[d1ttlpop$Population != 0,]
+
+# step 4, motion chart only use 'Data/numerice' type data for time attribute.
+q3d2ttl$TIME <- as.numeric(q3d2ttl$TIME)
+
+# joining two table
+q3d2ttl <- full_join(q3d2ttl, d1ttlpop, by = c("State", "TIME"))
+q3d2ttl<- as.data.frame(q3d2ttl)
+
+# step 5, make motion chart
+m1 <- gvisMotionChart(q3d2ttl, idvar = 'Indigenous region', timevar = 'TIME', 
+                      xvar ="Population", yvar='Percentage')
+plot(m1)
+```
+
+
+## Question 4
+a) In Northen Territoty, region Apatula's population overtabkes region Katherine in 2021.
+   ![Image of Question a](https://ibb.co/MhZ4z7d)
+   * Plese click on the image link, if image not pop up.
+
+b) Overall, the decline in the total population will reduce the percentage of children. Observed by year, the percentage of children in previous years will affect the population of the next year, so a declining percentage of children will reduce the total population of the next year.
+   ![Image of All path](https://ibb.co/HBxBY82)
+
+c) In this data structure, states are geographic information and can be used as classifications. At the same time,  the number of states is small, which can provide an obvious contrast for the colors and improve the readability of the chart.
+
+d) In this chart, we used regions and states. And in the data structure, we define the state to which the region belongs.  This makes the data unnecessary. In the chart, we can see that many graphs move on the same horizontal line and overlap each other. This is what we want to avoid. Therefore, I suggest using the only state as a regional classification, rather than using regions.
+
+
+
+# Task - B1
+## Question 1
+    To answear this question, we first remove the duplicate value, then find the length of returned vector which represent        the count of the variables
+```{r}
+length(unique(data3$`PHN area name`))
+```
+
+
+## Question 2
+    The possible value for 'Pin code' shoule be numeric with only following digits which removes the letter 'PHN'.
+    The first digit of pin code represent the state, e.g. '3xx', 3 represent Queensland.
+    As numeric value, the pin code can be used to classify the varibales in range of the state. e.g. '301 - 399' is the 
+    variables belongs to Queensland
+
+
+## Question 3
+ - Step 1. copy the data3 to a new df for later use.
+   Drop the empty columns. this opeartion is not reauired but in my persoal preference in dont want to keep it.
+   Then we calculate the percentage of Australian children that are fully immunised
+   finally, we summarise the mean. max and mini value and output the result
+   
+ - Step 2. The value type for IndigAus children is charactor and contain comma with digits, so we need to reformat the value to numeric value. After this opreation, the 'NP' value will be replace to NA.
+   
+   Then we calculate the percentage value, the rows with NA will output the percentage result as NA.
+   In the final step, we summarise the mean, max and mini value. But we need to use "na.rm = TRUE" to avoid the NA value being calculated. 
+   * I did not choose to replace the NP value with the median or average because I think the NP value is not missing data. I think this is data that was not collected at the time of sampling and should not be replaced.
+   
+   * I think these statistics are reasonable, The data use for calculation are highly correlated.
+   
+```{r}
+# step 1 
+pb_q3 <- data3
+pb_q3[,13:16] <- NULL
+# for Australian children(all race)
+pb_q3$immunisation_rate <- (pb_q3$`Number fully immunised` / data3$`Number of registered children`) * 100
+# output the result
+summarise(pb_q3, 'Average' = mean(immunisation_rate),
+                 'Maximum' = max(immunisation_rate),
+                 'Minimum' = min(immunisation_rate))
+
+# step 2, for Indigenous Australian children
+pb_q3$`Number of registered IndigAus  children` <- as.numeric(sub(",", "",pb_q3$`Number of registered IndigAus  children`, fixed = TRUE))
+# NP value become to NA
+pb_q3$`Number IndigAus fully immunised` <- as.numeric(sub(",", "",pb_q3$`Number IndigAus fully immunised`, fixed = TRUE))
+# calculate the percentage
+pb_q3$IndigAus_immuRate <- (pb_q3$`Number IndigAus fully immunised` / pb_q3$`Number of registered IndigAus  children`) * 100
+# output the result
+summarise(pb_q3, 'Average' = mean(IndigAus_immuRate, na.rm = TRUE),
+                 'Maximum' = max(IndigAus_immuRate, na.rm = TRUE),
+                 'Minimum' = min(IndigAus_immuRate, na.rm = TRUE))
+```
+
+# Task - B2
+## Question 1
+   In the past two years, the immunization rate has increased. In the first three years, it declined slightly. After that, the immunity rate increased. The median for the first three years also fell, and then rose. Because if you see a box chart, it has been falling for the first three years and then rising.
+   
+## Question 2
+The immunization rate of 2 year old children is lower than that of 1 year old children, while 5 year old children are the highest.
+
+## Question 3
+Median for the Immunisation rate for different State is given below,(All the data from the figure):
+```{r}
+# subset the data with only required columns
+q4box <- data3[, c(1,4:5, 13)]
+# summarise the median value by state
+summarise(q4box,
+          'ACT_median' = median(immunisation_rate[which(State == 'ACT')]),
+          'NSW_median' = median(immunisation_rate[which(State == 'NSW')]),
+          'QLD_median' = median(immunisation_rate[which(State == 'QLD')]),
+          'SA_median' = median(immunisation_rate[which(State == 'SA')]),
+          'WA_median' = median(immunisation_rate[which(State == 'WA')]),
+          'TAS_median' = median(immunisation_rate[which(State == 'TAS')]),
+          'VIC_median' = median(immunisation_rate[which(State == 'VIC')]),
+          'VIC/NSW_median' = median(immunisation_rate[which(State == 'VIC/NSW')]))
+```
+  
+## Question 4
+ACT has the most consistent immunity rate because this box plot has the smallest width.
+
+```{r}
+
+
+# make bot plot
+## age vs immunisation_rate
+ggplot(q4box, aes(`Age group`, immunisation_rate)) + geom_boxplot(outlier.color = 'red') 
+
+## Year vs immunisation_rate
+ggplot(q4box, aes(`Reporting Year`, immunisation_rate)) + geom_boxplot(outlier.color = 'red')
+
+## State vs immunisation_rate
+ggplot(q4box, aes(State, immunisation_rate)) + geom_boxplot(outlier.color = 'red')
+```
+
