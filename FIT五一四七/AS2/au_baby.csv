@@ -1,0 +1,316 @@
+"","Name_male","Count_male","Name_female","Count_female","Year","State","long","lat"
+"1","Alexander",245,"Matilda",235,2015,"Victoria",144.948955,-37.794048
+"2","Alexander",249,"Matilda",207,2018,"Queensland",153.026583,-27.483962
+"3","Alexander",253,"Sophie",227,2018,"Victoria",144.948955,-37.794048
+"4","Alexander",262,"Chloe",273,2016,"Victoria",144.948955,-37.794048
+"5","Alexander",264,"Chloe",247,2017,"Victoria",144.948955,-37.794048
+"6","Alexander",269,"Grace",266,2014,"Victoria",144.948955,-37.794048
+"7","Alexander",276,"Matilda",246,2013,"Victoria",144.948955,-37.794048
+"8","Alexander",306,"Willow",277,2019,"Victoria",144.948955,-37.794048
+"9","Archer",259,"Grace",229,2018,"Queensland",153.026583,-27.483962
+"10","Charlie",246,"Isabella",210,2019,"Queensland",153.026583,-27.483962
+"11","Charlie",247,"Ella",242,2016,"Victoria",144.948955,-37.794048
+"12","Charlie",249,"Emily",237,2015,"Victoria",144.948955,-37.794048
+"13","Charlie",251,"Evelyn",254,2016,"Queensland",153.026583,-27.483962
+"14","Charlie",261,"Zoe",263,2014,"Victoria",144.948955,-37.794048
+"15","Charlie",270,"Matilda",250,2018,"Victoria",144.948955,-37.794048
+"16","Charlie",280,"Isla",282,2017,"Victoria",144.948955,-37.794048
+"17","Charlie",353,"Zoe",294,2019,"Victoria",144.948955,-37.794048
+"18","Cooper",240,"Sophie",217,2017,"Queensland",153.026583,-27.483962
+"19","Cooper",249,"Ella",210,2018,"Queensland",153.026583,-27.483962
+"20","Cooper",250,"Chloe",242,2016,"Queensland",153.026583,-27.483962
+"21","Cooper",285,"Grace",260,2015,"Queensland",153.026583,-27.483962
+"22","Cooper",299,"Amelia",311,2014,"Queensland",153.026583,-27.483962
+"23","Cooper",402,"Mia",354,2013,"Queensland",153.026583,-27.483962
+"24","Elijah",237,"Chloe",217,2017,"Queensland",153.026583,-27.483962
+"25","Elijah",237,"Ella",225,2016,"Queensland",153.026583,-27.483962
+"26","Elijah",268,"Grace",231,2019,"Queensland",153.026583,-27.483962
+"27","Ethan",258,"Ivy",205,2014,"Queensland",153.026583,-27.483962
+"28","Ethan",279,"Ella",248,2017,"Victoria",144.948955,-37.794048
+"29","Ethan",293,"Sophie",276,2015,"Queensland",153.026583,-27.483962
+"30","Ethan",295,"Chloe",277,2018,"Victoria",144.948955,-37.794048
+"31","Ethan",303,"Sophie",334,2013,"Queensland",153.026583,-27.483962
+"32","Ethan",305,"Chloe",281,2015,"Victoria",144.948955,-37.794048
+"33","Ethan",305,"Emily",301,2014,"Victoria",144.948955,-37.794048
+"34","Ethan",325,"Isla",323,2016,"Victoria",144.948955,-37.794048
+"35","Ethan",334,"Harper",289,2019,"Victoria",144.948955,-37.794048
+"36","Ethan",381,"Mia",368,2013,"Victoria",144.948955,-37.794048
+"37","Harrison",252,"Grace",262,2016,"Queensland",153.026583,-27.483962
+"38","Harrison",265,"Matilda",219,2019,"Queensland",153.026583,-27.483962
+"39","Harrison",285,"Mia",261,2018,"Queensland",153.026583,-27.483962
+"40","Harrison",292,"Isabella",316,2013,"Queensland",153.026583,-27.483962
+"41","Harrison",293,"Emily",280,2015,"Queensland",153.026583,-27.483962
+"42","Harrison",296,"Mia",287,2017,"Queensland",153.026583,-27.483962
+"43","Harrison",330,"Sophie",322,2014,"Queensland",153.026583,-27.483962
+"44","Harry",267,"Ella",246,2018,"Victoria",144.948955,-37.794048
+"45","Harvey",273,"Ella",267,2019,"Victoria",144.948955,-37.794048
+"46","Henry",257,"Ruby",245,2015,"Queensland",153.026583,-27.483962
+"47","Henry",259,"Evelyn",231,2017,"Queensland",153.026583,-27.483962
+"48","Henry",261,"Sophie",262,2016,"Victoria",144.948955,-37.794048
+"49","Henry",282,"Grace",283,2017,"Victoria",144.948955,-37.794048
+"50","Henry",291,"Ava",286,2019,"Queensland",153.026583,-27.483962
+"51","Henry",301,"Amelia",283,2018,"Queensland",153.026583,-27.483962
+"52","Henry",331,"Isla",290,2018,"Victoria",144.948955,-37.794048
+"53","Henry",340,"Ruby",293,2019,"Victoria",144.948955,-37.794048
+"54","Hudson",248,"Harper",235,2016,"Queensland",153.026583,-27.483962
+"55","Hudson",250,"Sophie",213,2018,"Queensland",153.026583,-27.483962
+"56","Hudson",270,"Harper",241,2019,"Queensland",153.026583,-27.483962
+"57","Hudson",278,"Harper",244,2017,"Queensland",153.026583,-27.483962
+"58","Hunter",239,"Ruby",205,2019,"Queensland",153.026583,-27.483962
+"59","Hunter",252,"Isabella",216,2018,"Queensland",153.026583,-27.483962
+"60","Hunter",252,"Isla",232,2015,"Queensland",153.026583,-27.483962
+"61","Hunter",267,"Isla",296,2016,"Queensland",153.026583,-27.483962
+"62","Hunter",273,"Grace",239,2017,"Queensland",153.026583,-27.483962
+"63","Hunter",279,"Sophia",243,2013,"Queensland",153.026583,-27.483962
+"64","Hunter",302,"Emily",313,2014,"Queensland",153.026583,-27.483962
+"65","Jack",331,"Willow",293,2019,"Queensland",153.026583,-27.483962
+"66","Jack",348,"Amelia",303,2017,"Queensland",153.026583,-27.483962
+"67","Jack",362,"Olivia",333,2016,"Queensland",153.026583,-27.483962
+"68","Jack",387,"Isla",312,2018,"Queensland",153.026583,-27.483962
+"69","Jack",393,"Mia",341,2014,"Queensland",153.026583,-27.483962
+"70","Jack",402,"Amelia",344,2015,"Queensland",153.026583,-27.483962
+"71","Jack",415,"Charlotte",352,2015,"Victoria",144.948955,-37.794048
+"72","Jack",429,"Emily",354,2013,"Queensland",153.026583,-27.483962
+"73","Jack",435,"Olivia",413,2016,"Victoria",144.948955,-37.794048
+"74","Jack",450,"Amelia",357,2017,"Victoria",144.948955,-37.794048
+"75","Jack",463,"Charlotte",367,2018,"Victoria",144.948955,-37.794048
+"76","Jack",464,"Charlotte",393,2014,"Victoria",144.948955,-37.794048
+"77","Jack",485,"Ava",412,2013,"Victoria",144.948955,-37.794048
+"78","Jack",502,"Mia",413,2019,"Victoria",144.948955,-37.794048
+"79","James",248,"Evie",237,2016,"Queensland",153.026583,-27.483962
+"80","James",249,"Isabella",225,2018,"Victoria",144.948955,-37.794048
+"81","James",256,"Ivy",215,2019,"Queensland",153.026583,-27.483962
+"82","James",263,"Ivy",232,2017,"Queensland",153.026583,-27.483962
+"83","James",273,"Isabella",272,2014,"Queensland",153.026583,-27.483962
+"84","James",278,"Grace",269,2019,"Victoria",144.948955,-37.794048
+"85","James",280,"Ella",248,2015,"Queensland",153.026583,-27.483962
+"86","James",286,"Zoe",268,2015,"Victoria",144.948955,-37.794048
+"87","James",287,"Chloe",278,2013,"Queensland",153.026583,-27.483962
+"88","James",323,"Zoe",299,2017,"Victoria",144.948955,-37.794048
+"89","James",333,"Ava",324,2016,"Victoria",144.948955,-37.794048
+"90","James",337,"Amelia",316,2014,"Victoria",144.948955,-37.794048
+"91","James",372,"Sophie",332,2013,"Victoria",144.948955,-37.794048
+"92","Joshua",289,"Ella",312,2013,"Queensland",153.026583,-27.483962
+"93","Joshua",327,"Chloe",326,2013,"Victoria",144.948955,-37.794048
+"94","Lachlan",232,"Isabella",223,2015,"Victoria",144.948955,-37.794048
+"95","Lachlan",236,"Ruby",211,2017,"Queensland",153.026583,-27.483962
+"96","Lachlan",239,"Ivy",223,2016,"Victoria",144.948955,-37.794048
+"97","Lachlan",242,"Chloe",213,2015,"Queensland",153.026583,-27.483962
+"98","Lachlan",253,"Sophie",263,2016,"Queensland",153.026583,-27.483962
+"99","Lachlan",269,"Ella",274,2014,"Victoria",144.948955,-37.794048
+"100","Lachlan",269,"Grace",253,2014,"Queensland",153.026583,-27.483962
+"101","Lachlan",286,"Grace",302,2013,"Victoria",144.948955,-37.794048
+"102","Lachlan",293,"Ava",323,2013,"Queensland",153.026583,-27.483962
+"103","Leo",242,"Harper",236,2016,"Victoria",144.948955,-37.794048
+"104","Leo",260,"Willow",253,2018,"Queensland",153.026583,-27.483962
+"105","Leo",263,"Isabella",241,2017,"Victoria",144.948955,-37.794048
+"106","Leo",289,"Isla",279,2019,"Queensland",153.026583,-27.483962
+"107","Leo",314,"Zoe",287,2018,"Victoria",144.948955,-37.794048
+"108","Leo",377,"Ava",350,2019,"Victoria",144.948955,-37.794048
+"109","Levi",240,"Isabella",232,2016,"Queensland",153.026583,-27.483962
+"110","Liam",233,"Ruby",225,2015,"Victoria",144.948955,-37.794048
+"111","Liam",249,"Scarlett",223,2015,"Queensland",153.026583,-27.483962
+"112","Liam",253,"Emily",239,2017,"Victoria",144.948955,-37.794048
+"113","Liam",257,"Isabella",254,2014,"Victoria",144.948955,-37.794048
+"114","Liam",265,"Sophia",227,2014,"Queensland",153.026583,-27.483962
+"115","Liam",270,"Grace",257,2018,"Victoria",144.948955,-37.794048
+"116","Liam",285,"Zoe",268,2013,"Victoria",144.948955,-37.794048
+"117","Liam",289,"Evie",272,2019,"Victoria",144.948955,-37.794048
+"118","Lucas",239,"Ella",207,2019,"Queensland",153.026583,-27.483962
+"119","Lucas",240,"Ruby",199,2018,"Queensland",153.026583,-27.483962
+"120","Lucas",243,"Evie",222,2015,"Queensland",153.026583,-27.483962
+"121","Lucas",250,"Ella",229,2017,"Queensland",153.026583,-27.483962
+"122","Lucas",258,"Emily",247,2016,"Victoria",144.948955,-37.794048
+"123","Lucas",264,"Emily",229,2018,"Victoria",144.948955,-37.794048
+"124","Lucas",274,"Chloe",283,2014,"Queensland",153.026583,-27.483962
+"125","Lucas",274,"Isla",217,2013,"Queensland",153.026583,-27.483962
+"126","Lucas",284,"Evie",263,2015,"Victoria",144.948955,-37.794048
+"127","Lucas",309,"Ruby",325,2013,"Victoria",144.948955,-37.794048
+"128","Lucas",315,"Evie",284,2017,"Victoria",144.948955,-37.794048
+"129","Lucas",318,"Sophie",313,2014,"Victoria",144.948955,-37.794048
+"130","Lucas",357,"Chloe",326,2019,"Victoria",144.948955,-37.794048
+"131","Mason",245,"Ella",236,2015,"Victoria",144.948955,-37.794048
+"132","Mason",247,"Willow",228,2017,"Queensland",153.026583,-27.483962
+"133","Mason",251,"Emily",257,2016,"Queensland",153.026583,-27.483962
+"134","Mason",255,"Isabella",236,2015,"Queensland",153.026583,-27.483962
+"135","Mason",259,"Harper",239,2017,"Victoria",144.948955,-37.794048
+"136","Mason",263,"Grace",278,2016,"Victoria",144.948955,-37.794048
+"137","Mason",269,"Isla",245,2014,"Queensland",153.026583,-27.483962
+"138","Mason",269,"Ruby",284,2014,"Victoria",144.948955,-37.794048
+"139","Mason",280,"Sienna",258,2013,"Queensland",153.026583,-27.483962
+"140","Mason",288,"Amelia",320,2013,"Victoria",144.948955,-37.794048
+"141","Max",258,"Sophie",242,2015,"Victoria",144.948955,-37.794048
+"142","Max",268,"Evie",246,2018,"Victoria",144.948955,-37.794048
+"143","Max",271,"Sienna",233,2013,"Victoria",144.948955,-37.794048
+"144","Max",282,"Evie",301,2016,"Victoria",144.948955,-37.794048
+"145","Noah",292,"Amelia",304,2016,"Queensland",153.026583,-27.483962
+"146","Noah",314,"Ava",322,2015,"Queensland",153.026583,-27.483962
+"147","Noah",320,"Mia",283,2015,"Victoria",144.948955,-37.794048
+"148","Noah",355,"Amelia",342,2013,"Queensland",153.026583,-27.483962
+"149","Noah",355,"Mia",358,2018,"Victoria",144.948955,-37.794048
+"150","Noah",360,"Ava",305,2017,"Queensland",153.026583,-27.483962
+"151","Noah",368,"Isabella",327,2013,"Victoria",144.948955,-37.794048
+"152","Noah",368,"Ruby",322,2014,"Queensland",153.026583,-27.483962
+"153","Noah",372,"Ava",347,2017,"Victoria",144.948955,-37.794048
+"154","Noah",373,"Amelia",355,2016,"Victoria",144.948955,-37.794048
+"155","Noah",373,"Olivia",306,2018,"Queensland",153.026583,-27.483962
+"156","Noah",374,"Ava",345,2014,"Victoria",144.948955,-37.794048
+"157","Noah",383,"Amelia",305,2019,"Queensland",153.026583,-27.483962
+"158","Noah",459,"Charlotte",408,2019,"Victoria",144.948955,-37.794048
+"159","Oliver",469,"Olivia",390,2013,"Victoria",144.948955,-37.794048
+"160","Oliver",494,"Charlotte",449,2013,"Queensland",153.026583,-27.483962
+"161","Oliver",504,"Olivia",443,2014,"Victoria",144.948955,-37.794048
+"162","Oliver",507,"Olivia",374,2018,"Victoria",144.948955,-37.794048
+"163","Oliver",509,"Charlotte",426,2017,"Victoria",144.948955,-37.794048
+"164","Oliver",510,"Charlotte",384,2017,"Queensland",153.026583,-27.483962
+"165","Oliver",510,"Charlotte",408,2018,"Queensland",153.026583,-27.483962
+"166","Oliver",512,"Olivia",386,2014,"Queensland",153.026583,-27.483962
+"167","Oliver",516,"Charlotte",453,2016,"Victoria",144.948955,-37.794048
+"168","Oliver",527,"Charlotte",451,2016,"Queensland",153.026583,-27.483962
+"169","Oliver",527,"Olivia",393,2015,"Victoria",144.948955,-37.794048
+"170","Oliver",537,"Olivia",313,2019,"Queensland",153.026583,-27.483962
+"171","Oliver",537,"Olivia",419,2019,"Victoria",144.948955,-37.794048
+"172","Oliver",541,"Charlotte",415,2015,"Queensland",153.026583,-27.483962
+"173","Oscar",241,"Grace",235,2015,"Victoria",144.948955,-37.794048
+"174","Oscar",258,"Sienna",255,2014,"Victoria",144.948955,-37.794048
+"175","Oscar",307,"Matilda",278,2019,"Victoria",144.948955,-37.794048
+"176","Samuel",270,"Ella",264,2014,"Queensland",153.026583,-27.483962
+"177","Samuel",281,"Grace",273,2013,"Queensland",153.026583,-27.483962
+"178","Thomas",271,"Harper",259,2018,"Queensland",153.026583,-27.483962
+"179","Thomas",285,"Mia",261,2019,"Queensland",153.026583,-27.483962
+"180","Thomas",289,"Isla",282,2017,"Queensland",153.026583,-27.483962
+"181","Thomas",299,"Olivia",325,2013,"Queensland",153.026583,-27.483962
+"182","Thomas",310,"Mia",314,2015,"Queensland",153.026583,-27.483962
+"183","Thomas",320,"Zoe",304,2016,"Victoria",144.948955,-37.794048
+"184","Thomas",323,"Ava",321,2014,"Queensland",153.026583,-27.483962
+"185","Thomas",330,"Ava",330,2016,"Queensland",153.026583,-27.483962
+"186","Thomas",337,"Ava",324,2015,"Victoria",144.948955,-37.794048
+"187","Thomas",342,"Chloe",328,2014,"Victoria",144.948955,-37.794048
+"188","Thomas",345,"Ava",332,2018,"Victoria",144.948955,-37.794048
+"189","Thomas",345,"Mia",319,2017,"Victoria",144.948955,-37.794048
+"190","Thomas",374,"Emily",344,2013,"Victoria",144.948955,-37.794048
+"191","Thomas",385,"Isla",368,2019,"Victoria",144.948955,-37.794048
+"192","William",393,"Charlotte",312,2019,"Queensland",153.026583,-27.483962
+"193","William",405,"Mia",364,2016,"Victoria",144.948955,-37.794048
+"194","William",411,"Amelia",338,2015,"Victoria",144.948955,-37.794048
+"195","William",417,"Ava",350,2018,"Queensland",153.026583,-27.483962
+"196","William",424,"Amelia",396,2019,"Victoria",144.948955,-37.794048
+"197","William",436,"Amelia",365,2018,"Victoria",144.948955,-37.794048
+"198","William",438,"Olivia",335,2017,"Queensland",153.026583,-27.483962
+"199","William",440,"Mia",349,2016,"Queensland",153.026583,-27.483962
+"200","William",462,"Charlotte",380,2014,"Queensland",153.026583,-27.483962
+"201","William",463,"Mia",355,2014,"Victoria",144.948955,-37.794048
+"202","William",463,"Olivia",357,2015,"Queensland",153.026583,-27.483962
+"203","William",466,"Olivia",360,2017,"Victoria",144.948955,-37.794048
+"204","William",469,"Ruby",366,2013,"Queensland",153.026583,-27.483962
+"205","William",494,"Charlotte",435,2013,"Victoria",144.948955,-37.794048
+"206","Xavier",245,"Matilda",238,2014,"Victoria",144.948955,-37.794048
+"207","Xavier",263,"Sophie",246,2017,"Victoria",144.948955,-37.794048
+"208","Xavier",285,"Ella",274,2013,"Victoria",144.948955,-37.794048
+"209","Theodore",245,"Sophie",208,2019,"Queensland",153.026583,-27.483962
+"210","Theodore",254,"Evelyn",225,2018,"Queensland",153.026583,-27.483962
+"211","Ethan",85,"Isla",77,2014,"South Australia",138.599826,-34.911363
+"212","Ethan",86,"Mia",89,2015,"South Australia",138.599826,-34.911363
+"213","Ethan",89,"Ruby",81,2016,"South Australia",138.599826,-34.911363
+"214","Ethan",105,"Grace",106,2013,"South Australia",138.599826,-34.911363
+"215","Harrison",74,"Evie",70,2015,"South Australia",138.599826,-34.911363
+"216","Harrison",75,"Chloe",76,2017,"South Australia",138.599826,-34.911363
+"217","Harrison",79,"Chloe",75,2016,"South Australia",138.599826,-34.911363
+"218","Harrison",79,"Ruby",68,2019,"South Australia",138.599826,-34.911363
+"219","Harrison",89,"Amelia",101,2014,"South Australia",138.599826,-34.911363
+"220","Harrison",92,"Ella",88,2013,"South Australia",138.599826,-34.911363
+"221","Harrison",115,"Mia",97,2018,"South Australia",138.599826,-34.911363
+"222","Henry",78,"Ivy",77,2015,"South Australia",138.599826,-34.911363
+"223","Henry",82,"Scarlett",71,2013,"South Australia",138.599826,-34.911363
+"224","Henry",82,"Scarlett",71,2014,"South Australia",138.599826,-34.911363
+"225","Henry",89,"Amelia",87,2017,"South Australia",138.599826,-34.911363
+"226","Henry",96,"Evie",94,2016,"South Australia",138.599826,-34.911363
+"227","Henry",98,"Chloe",101,2013,"South Australia",138.599826,-34.911363
+"228","Henry",99,"Willow",86,2019,"South Australia",138.599826,-34.911363
+"229","Henry",101,"Grace",88,2018,"South Australia",138.599826,-34.911363
+"230","Jack",101,"Grace",93,2019,"South Australia",138.599826,-34.911363
+"231","Jack",106,"Ruby",108,2013,"South Australia",138.599826,-34.911363
+"232","Jack",111,"Isla",110,2017,"South Australia",138.599826,-34.911363
+"233","Jack",125,"Olivia",97,2015,"South Australia",138.599826,-34.911363
+"234","Jack",129,"Olivia",123,2016,"South Australia",138.599826,-34.911363
+"235","Jack",132,"Amelia",114,2018,"South Australia",138.599826,-34.911363
+"236","Jack",132,"Grace",116,2014,"South Australia",138.599826,-34.911363
+"237","Jacob",87,"Lucy",70,2013,"South Australia",138.599826,-34.911363
+"238","James",81,"Grace",80,2015,"South Australia",138.599826,-34.911363
+"239","James",97,"Amelia",97,2013,"South Australia",138.599826,-34.911363
+"240","James",100,"Mia",103,2016,"South Australia",138.599826,-34.911363
+"241","James",107,"Ava",103,2014,"South Australia",138.599826,-34.911363
+"242","Lachlan",79,"Ruby",78,2015,"South Australia",138.599826,-34.911363
+"243","Lachlan",93,"Sophie",102,2014,"South Australia",138.599826,-34.911363
+"244","Lachlan",99,"Isabella",103,2013,"South Australia",138.599826,-34.911363
+"245","Lucas",79,"Ella",67,2019,"South Australia",138.599826,-34.911363
+"246","Lucas",80,"Grace",80,2017,"South Australia",138.599826,-34.911363
+"247","Lucas",83,"Willow",78,2018,"South Australia",138.599826,-34.911363
+"248","Lucas",93,"Isla",84,2016,"South Australia",138.599826,-34.911363
+"249","Lucas",94,"Mia",94,2013,"South Australia",138.599826,-34.911363
+"250","Lucas",102,"Sophie",92,2015,"South Australia",138.599826,-34.911363
+"251","Lucas",124,"Olivia",109,2014,"South Australia",138.599826,-34.911363
+"252","Mason",80,"Ruby",72,2018,"South Australia",138.599826,-34.911363
+"253","Mason",81,"Mia",69,2019,"South Australia",138.599826,-34.911363
+"254","Mason",82,"Harper",68,2014,"South Australia",138.599826,-34.911363
+"255","Mason",84,"Olivia",86,2017,"South Australia",138.599826,-34.911363
+"256","Mason",100,"Amelia",96,2016,"South Australia",138.599826,-34.911363
+"257","Mason",101,"Sophie",104,2013,"South Australia",138.599826,-34.911363
+"258","Max",72,"Emily",63,2017,"South Australia",138.599826,-34.911363
+"259","Max",77,"Ella",75,2015,"South Australia",138.599826,-34.911363
+"260","Max",77,"Lucy",66,2019,"South Australia",138.599826,-34.911363
+"261","Max",82,"Sophie",80,2016,"South Australia",138.599826,-34.911363
+"262","Max",87,"Ella",83,2014,"South Australia",138.599826,-34.911363
+"263","Max",94,"Olivia",92,2013,"South Australia",138.599826,-34.911363
+"264","Noah",96,"Emily",85,2016,"South Australia",138.599826,-34.911363
+"265","Noah",100,"Harper",91,2017,"South Australia",138.599826,-34.911363
+"266","Noah",101,"Amelia",86,2019,"South Australia",138.599826,-34.911363
+"267","Noah",101,"Olivia",88,2018,"South Australia",138.599826,-34.911363
+"268","Noah",111,"Emily",111,2013,"South Australia",138.599826,-34.911363
+"269","Noah",112,"Emily",106,2014,"South Australia",138.599826,-34.911363
+"270","Noah",123,"Ava",96,2015,"South Australia",138.599826,-34.911363
+"271","Oliver",152,"Charlotte",119,2019,"South Australia",138.599826,-34.911363
+"272","Oliver",170,"Charlotte",171,2013,"South Australia",138.599826,-34.911363
+"273","Oliver",172,"Charlotte",132,2017,"South Australia",138.599826,-34.911363
+"274","Oliver",173,"Charlotte",119,2018,"South Australia",138.599826,-34.911363
+"275","Oliver",184,"Charlotte",128,2014,"South Australia",138.599826,-34.911363
+"276","Oliver",186,"Charlotte",124,2015,"South Australia",138.599826,-34.911363
+"277","Oliver",190,"Charlotte",139,2016,"South Australia",138.599826,-34.911363
+"278","Thomas",81,"Evie",82,2017,"South Australia",138.599826,-34.911363
+"279","Thomas",85,"Ruby",77,2014,"South Australia",138.599826,-34.911363
+"280","Thomas",88,"Sienna",80,2013,"South Australia",138.599826,-34.911363
+"281","Thomas",96,"Chloe",89,2015,"South Australia",138.599826,-34.911363
+"282","William",102,"Olivia",103,2019,"South Australia",138.599826,-34.911363
+"283","William",114,"Ava",114,2017,"South Australia",138.599826,-34.911363
+"284","William",117,"Ava",100,2018,"South Australia",138.599826,-34.911363
+"285","William",117,"Ava",116,2016,"South Australia",138.599826,-34.911363
+"286","William",118,"Ava",125,2013,"South Australia",138.599826,-34.911363
+"287","William",128,"Chloe",111,2014,"South Australia",138.599826,-34.911363
+"288","William",134,"Amelia",111,2015,"South Australia",138.599826,-34.911363
+"289","Charlie",71,"Zoe",62,2017,"South Australia",138.599826,-34.911363
+"290","Charlie",87,"Mia",100,2014,"South Australia",138.599826,-34.911363
+"291","Charlie",94,"Isla",83,2019,"South Australia",138.599826,-34.911363
+"292","Charlie",103,"Scarlett",93,2015,"South Australia",138.599826,-34.911363
+"293","Charlie",105,"Isla",92,2018,"South Australia",138.599826,-34.911363
+"294","Liam",79,"Zoe",72,2018,"South Australia",138.599826,-34.911363
+"295","Liam",82,"Ella",80,2016,"South Australia",138.599826,-34.911363
+"296","Liam",83,"Emily",81,2015,"South Australia",138.599826,-34.911363
+"297","Liam",87,"Isabella",89,2014,"South Australia",138.599826,-34.911363
+"298","Riley",73,"Zoe",68,2015,"South Australia",138.599826,-34.911363
+"299","Archer",73,"Sophie",76,2017,"South Australia",138.599826,-34.911363
+"300","Archer",77,"Grace",69,2016,"South Australia",138.599826,-34.911363
+"301","Archer",77,"Evie",69,2018,"South Australia",138.599826,-34.911363
+"302","Hudson",77,"Lily",69,2016,"South Australia",138.599826,-34.911363
+"303","Oscar",78,"Harper",75,2016,"South Australia",138.599826,-34.911363
+"304","Oscar",90,"Ivy",79,2019,"South Australia",138.599826,-34.911363
+"305","Harvey",81,"Sophie",79,2019,"South Australia",138.599826,-34.911363
+"306","Harvey",83,"Mia",85,2017,"South Australia",138.599826,-34.911363
+"307","Hunter",73,"Ruby",69,2017,"South Australia",138.599826,-34.911363
+"308","Hunter",74,"Evelyn",63,2019,"South Australia",138.599826,-34.911363
+"309","Hunter",76,"Chloe",67,2018,"South Australia",138.599826,-34.911363
+"310","Leo",82,"Ella",84,2017,"South Australia",138.599826,-34.911363
+"311","Leo",89,"Harper",81,2018,"South Australia",138.599826,-34.911363
+"312","Leo",106,"Ava",112,2019,"South Australia",138.599826,-34.911363
+"313","Harry",82,"Sophie",73,2018,"South Australia",138.599826,-34.911363
+"314","Levi",77,"Aria",67,2018,"South Australia",138.599826,-34.911363
+"315","Elijah",74,"Harper",65,2019,"South Australia",138.599826,-34.911363
